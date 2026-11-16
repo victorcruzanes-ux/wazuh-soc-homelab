@@ -347,18 +347,23 @@ Como posibles ampliaciones del laboratorio se plantean:
 
 ## 12. Evidencias
 
-Las siguientes evidencias deben incorporarse al repositorio para respaldar los resultados documentados.
+Se incluyen las siguientes capturas obtenidas durante el desarrollo y validación del escenario:
 
-| Archivo | Evidencia |
-|---|---|
-| `01-ssh-connectivity.png` | Conectividad entre Kali y Wazuh y disponibilidad del puerto 22 |
-| `02-ssh-auth-failure.png` | Intento controlado de autenticación SSH fallida |
-| `03-auth-log.png` | Registros de autenticación del servidor |
-| `04-wazuh-rule-5710.png` | Alerta de usuario inexistente |
-| `05-wazuh-rule-5503.png` | Alerta de fallo de autenticación PAM |
-| `06-deduplication-validation.png` | Validación de eventos posteriores a la corrección de duplicidades |
+### 12.1. Alertas de autenticación SSH
 
-Las capturas deben mostrar los resultados reales del laboratorio, evitando incluir contraseñas, credenciales o información sensible.
+![Alertas SSH en Wazuh](evidence/01-ssh-authentication-alerts.png)
+
+Captura del dashboard de Wazuh donde se observan las alertas correspondientes a las reglas 5710 y 5503. También permite identificar la duplicidad detectada durante la primera validación, que posteriormente fue investigada y corregida mediante un ajuste en la configuración de recopilación de registros.
+
+### 12.2. Eventos generales de seguridad
+
+![Eventos generales de Wazuh](evidence/02-wazuh-security-events.png)
+
+Vista general de los eventos registrados por Wazuh, incluyendo actividad de autenticación PAM y operaciones administrativas mediante sudo.
+
+Las capturas documentan parte del proceso de investigación. Los resultados de la validación posterior a la corrección de duplicidades se complementan con las comprobaciones realizadas directamente sobre los registros del sistema.
+
+**Nota:** Las evidencias se han obtenido en un entorno virtualizado propio y controlado.
 
 ## 13. Consideraciones éticas y de seguridad
 
